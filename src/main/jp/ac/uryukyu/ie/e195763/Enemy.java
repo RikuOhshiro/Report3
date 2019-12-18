@@ -46,10 +46,14 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(jp.ac.uryukyu.ie.e195763.Hero hero){
+        if(dead == false){
         int damage = (int)(Math.random() * attack);
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
         hero.wounded(damage);
+        }else {
+        }
     }
+
 
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
