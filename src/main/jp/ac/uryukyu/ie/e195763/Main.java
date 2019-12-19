@@ -11,11 +11,15 @@ public class Main {
         System.out.printf("%s vs. %s\n", hero.getName(), enemy.getName());
 
         int turn = 0;
-        while( hero.isDead() == false && enemy.isDead() == false ){
+        while( hero.b == false && enemy.b == false ){
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
-            hero.attack(enemy);
-            enemy.attack(hero);
+            if (!hero.b){
+                hero.attack(enemy);
+            }
+            if (!enemy.b){
+                enemy.attack(hero);
+            }
         }
         System.out.println("戦闘終了");
     }
